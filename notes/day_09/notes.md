@@ -16,6 +16,15 @@ pip install -r requirements.txt
 
 ```
 
+## Run pytest watcher
+
+To continuously watch for file changes and run pytest, you can run ptw.
+
+```bash
+# Run the following command
+ptw -- -vv
+```
+
 ## Side Notes
 
 Agile Scrum.
