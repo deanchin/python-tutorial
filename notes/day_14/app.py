@@ -56,3 +56,5 @@ if __name__ == "__main__":
     # print('--- TWO ----')
     CONTACT = Contact().find_many({'lastName': 'Chin'})
     print(list(CONTACT))
+    Contact().update(query={'firstName': 'Mrs', 'lastName': 'Jackson'},
+                     update_dict={'$set': {'address': '123 Wheels of Steel'}})

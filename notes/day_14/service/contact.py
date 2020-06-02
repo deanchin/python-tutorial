@@ -41,3 +41,11 @@ class Contact():
     def delete_many(self, query):
         ''' delete an item from collection '''
         return self.collection.delete_many(filter=query)
+
+    def update(self, query, update_dict):
+        ''' update a item in the collection '''
+        result = self.collection.update_one(filter=query, update=update_dict)
+        if result.modified_count == 0:
+            self.logger.warning('Nothing changed')
+        else:
+            self.logger.info('New -> %s', self.find_one(query=query))
