@@ -16,17 +16,28 @@ class Contact():
 
     def add_item(self, item):
         ''' Add an item to the database '''
-        if self.find_item(query={
+        if self.find_one(query={
                 'firstName': item['firstName'],
                 'lastName': item['lastName']}):
             self.logger.error('Contact already exists for %s %s',
                               item['firstName'], item['lastName'])
+            return
+        self.logger.info('Contact %s %s added successfully',
+                         item['firstName'], item['lastName'])
         self.collection.insert_one(item)
 
-    def find_item(self, query):
+    def find_one(self, query):
         ''' find a item in collection '''
         return self.collection.find_one(filter=query)
 
-    def delete_item(self, query):
+    def find_many(self, query):
+        ''' find a item in collection '''
+        return self.collection.find(filter=query)
+
+    def delete_one(self, query):
         ''' delete an item from collection '''
         return self.collection.delete_one(filter=query)
+
+    def delete_many(self, query):
+        ''' delete an item from collection '''
+        return self.collection.delete_many(filter=query)

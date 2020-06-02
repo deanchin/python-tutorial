@@ -19,7 +19,27 @@ if __name__ == "__main__":
 
     Contact().add_item(
         {
+            'firstName': 'Mrs',
+            'lastName': 'Jackson',
+            'address': '909 Golden Palomino Court',
+            'city': 'Austin',
+            'state': 'TX',
+            'zipcode': '78732'
+        }
+    )
+    Contact().add_item(
+        {
             'firstName': 'Dean',
+            'lastName': 'Chin',
+            'address': '909 Golden Palomino Court',
+            'city': 'Austin',
+            'state': 'TX',
+            'zipcode': '78732'
+        }
+    )
+    Contact().add_item(
+        {
+            'firstName': 'Ricky',
             'lastName': 'Chin',
             'address': '909 Golden Palomino Court',
             'city': 'Austin',
@@ -29,9 +49,10 @@ if __name__ == "__main__":
     )
 
     # print('--- ONE ----')
-    # CONTACT = Contact().find_item({'lastName': 'Chin'})
-    # print(CONTACT)
-    # Contact().delete_item({'lastName': 'Chin'})
+    CONTACT = Contact().find_many({'lastName': 'Chin'})
+    print(list(CONTACT))
+    # Contact().delete_one({'lastName': 'Chin'})
+    Contact().delete_many({'lastName': 'Chin'})
     # print('--- TWO ----')
-    # CONTACT = Contact().find_item({'lastName': 'Chin'})
-    # print(CONTACT)
+    CONTACT = Contact().find_many({'lastName': 'Chin'})
+    print(list(CONTACT))
