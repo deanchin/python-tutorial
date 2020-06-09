@@ -1,6 +1,6 @@
 """ Items Endpoint """
 from flask import request
-from flask_restx import Namespace, Resource
+from flask_restx import Namespace, Resource, fields
 
 from service.items import Items
 
@@ -8,6 +8,22 @@ NS = Namespace(
     'items',
     description='Operations related to items'
 )
+
+ITEM = NS.model(
+    "Item", {
+        "name": fields.String(
+            required=True,
+            description="Item name",
+            example="Apple"
+        ),
+        "price": fields.String(
+            required=True,
+            description="Item price",
+            example="1.25"
+        )
+    }
+)
+
 
 @NS.route("")
 class ItemsCollection(Resource):
@@ -17,9 +33,10 @@ class ItemsCollection(Resource):
         """ Returns list of items """
         return Items().get_all()
 
+    @NS.expect(ITEM)
     def post(self):
         """ Creates a new item """
-        return {'message': 'Created Item'}, 201
+        return Items().create_one(request.get_json())
 
 
 @NS.route("/<string:name>")

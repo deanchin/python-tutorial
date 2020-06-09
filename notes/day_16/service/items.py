@@ -16,8 +16,16 @@ class Items():
     def get_one(self, name):
         ''' get one item by name '''
         return {
-            'message': f'get {name}'
+            'message': f'Found item {name}'
         }, 200
+
+    def create_one(self, payload):
+        ''' Create an item '''
+        return {
+            'message': f'Created item: {payload}',
+            'itemName': f'{payload["name"]}',
+            'itemPrice': f'{payload["price"]}',
+        }, 201
 
     def update_one(self, name, payload):
         ''' update one item by name '''

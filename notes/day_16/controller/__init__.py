@@ -4,6 +4,7 @@ from flask_restx import Api
 # Import namespaces from the controllers here below.
 # Example: from .<file_name> import <namespace> as <namespace_ns>
 from .items import NS as items_ns
+from .movies import NS as movies_ns
 
 
 API = Api(
@@ -15,3 +16,4 @@ API = Api(
 # Add the namespaces to the API below here
 # Example: API.add_namespace(<namespace>)
 API.add_namespace(items_ns)
+API.add_namespace(movies_ns)
