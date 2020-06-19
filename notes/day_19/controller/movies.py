@@ -12,7 +12,8 @@ NS = Namespace(
 # localhost:5000/movies?genre=value1&inTheathers=value2&fields=[name,address]
 GET_PARSER = reqparse.RequestParser()
 GET_PARSER.add_argument(
-    'genre', required=False, default=None,
+    'genre', choices=['Comedy', 'Horror', 'Action', 'Drama'],
+    required=False, default=None,
     help='Optionally filter by genre')
 GET_PARSER.add_argument(
     'inTheaters', type=inputs.boolean, required=False,
