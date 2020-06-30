@@ -38,8 +38,7 @@
 {
     "game_id": 1,
     "board": [[X,2,3],[O,5,6],[7,8,9]],
-    "lastActivity": "date/time stamp",
-
+    "lastActivity": "date/time stamp"
 }
 
 # Activity Log
