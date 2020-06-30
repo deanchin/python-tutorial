@@ -30,9 +30,6 @@
         "tied": 2
     },
     "level": 4,
-    "gameLog": {
-
-    },
     "friends": ["billy", "bob", "johnny"],
     "activeGameId": 1
 }
@@ -66,4 +63,3 @@
     ]
 }
 ```
-
