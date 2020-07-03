@@ -2,9 +2,6 @@
 
 # How would you m,ake the Tic Tac Toe game online?
 
-
-
-
 6 users:
 - Connect users
 - User will need access and have to log in so you know who they are
@@ -41,7 +38,7 @@
     "lastActivity": "date/time stamp"
 }
 
-# Activity Log
+# Activity Log: GET /activity/{userId}
 {
     "gameHistory": [
         {
