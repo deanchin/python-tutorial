@@ -4,6 +4,8 @@ SAMPLE_DICT = {
     "name": "Dean"
 }
 
+## Assignement
+Details in the day_22 notes.md under users.  Create the endpooiints that is in the comments
 
 def func_one():
     try:

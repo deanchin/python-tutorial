@@ -16,6 +16,10 @@
 
 ```bash
 # User document
+GET /users <-- Gets all users
+POST /users <-- Creates a user
+PUT /users/{userId}/friends/{userId} <-- Allows adding a user as a fried
+DELETE /users/{userId}/friends/{userId}  <-- Allows deleting a user from friends list
 {
     "username": "dean",
     "password": "Password123",
