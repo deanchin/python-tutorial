@@ -12,6 +12,9 @@ Took a look at the following sections from the Python3 app that Ricky found:
 - Python Webscraping
 - Pandas and dataframes
 
+PUT http://my.server/apples/{id}/color/{color}
+
+
 
 Want to see when an item drops down to a specific price.
 - Check 50 websites
