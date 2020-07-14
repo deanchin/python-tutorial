@@ -16,8 +16,8 @@ Took a look at the following sections from the Python3 app that Ricky found:
 
 Example of what a rest endpoint may look like that will update the color for a apple resource
 PUT http://my.server/apples/{id}/color/{color}
-- Resources should be plural (ex: the resource iin the above url is apples)
 
+- Resources should be plural (ex: the resource in the above url is apples)
 
 PUT http://my.server.com/players/{username}
 {
@@ -26,8 +26,6 @@ PUT http://my.server.com/players/{username}
 }
 
 PUT http://my.server.com/players/{username}/status/{offline}
-
-
 
 ## numpy
 

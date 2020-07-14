@@ -1,12 +1,13 @@
+''' Testing out numpy '''
 import numpy as np
 
 TABLE = np.zeros((6, 7), dtype=int)
-win1rule = np.array([1,1,1,1])
-win2rule = np.array([2,2,2,2])
+win1rule = np.array([1, 1, 1, 1])
+win2rule = np.array([2, 2, 2, 2])
 
 # arr = [0,0,1,1,1,1,2,2,1,1,0]
-arr = [0,0,1,1,1,1,2,2,1,1,0]
-sub_arrays = [arr[i:i+4] for i in range(len(arr)-3)] 
+arr = [0, 0, 1, 1, 1, 1, 2, 2, 1, 1, 0]
+sub_arrays = [arr[i:i+4] for i in range(len(arr)-3)]
 
 for sub in sub_arrays:
     print(sub)
@@ -14,10 +15,10 @@ for sub in sub_arrays:
 player1wins = any([np.array_equal(win1rule, sub) for sub in sub_arrays])
 player2wins = any([np.array_equal(win2rule, sub) for sub in sub_arrays])
 
-TABLE[2,1] = 1
-TABLE[3,2] = 1
-TABLE[4,3] = 1
-TABLE[5,4] = 1
+TABLE[2, 1] = 1
+TABLE[3, 2] = 1
+TABLE[4, 3] = 1
+TABLE[5, 4] = 1
 
 diags = []
 i = 7
@@ -43,13 +44,13 @@ else:
 win_length = 4
 r = 8
 c = 10
-a = np.arange(r * c).reshape(r,c)
+a = np.arange(r * c).reshape(r, c)
 print(a)
 # print(a.diagonal(c - win_length))
-for i in range(0,c - win_length + 1):
+for i in range(0, c - win_length + 1):
     print(a.diagonal(i))
     print(a.diagonal(-i))
 print("==============================")
-for i in range(0,r - win_length + 1):
+for i in range(0, r - win_length + 1):
     print(np.diagonal(np.rot90(a), i))
 # print(np.diagonal(np.rot90(a)))
