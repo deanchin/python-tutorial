@@ -2,6 +2,7 @@
 import mysql.connector
 from mysql.connector import errorcode
 
+
 def get_conn():
     ''' returns the database connection '''
     try:
