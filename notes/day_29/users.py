@@ -45,3 +45,11 @@ class Users():
         # Iterate through the cursor and print each user
         for (first_name, last_name) in self.cursor:
             print(f"{first_name} {last_name}")
+
+
+/games/{id}/move
+{
+    "row": 2,
+    "column": 4,
+    "player": 1
+}
