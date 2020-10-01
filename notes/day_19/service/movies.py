@@ -19,7 +19,7 @@ class Movies():
     def get_all(self, genre=None, in_theaters=None):
         ''' get all movies '''
         self.logger.info('genre=%s in_theaters=%s', genre, in_theaters)
-        self.logger.info(list(self.collection.find({})))
+        self.logger.info(list(self.collection.find({'status': 'OPEN', 'lastActivity': {'lte': '2020-01-01'}})))
 
         # Add query parameters if they are passed in
         query = {}
